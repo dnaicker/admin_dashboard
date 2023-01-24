@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- libraries -->
+
+<head>
+  <title>CSIR SSI</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Custom JS -->
+  <script defer src="../../js/modal.js" type="module"></script>
+  <script defer src="../../js/api.js" type="module"></script>
+  <script defer src="../../js/main.js" type="module"></script>
+
+  <!-- JQuery JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+    integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.2/js/bootstrap.bundle.min.js"
+    integrity="sha512-BOsvKbLb0dB1IVplOL9ptU1EYA+LuCKEluZWRUYG73hxqNBU85JBIBhPGwhQl7O633KtkjMv8lvxZcWP+N3V3w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <!-- FontAwesome JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/fontawesome.min.js"
+    integrity="sha512-PoFg70xtc+rAkD9xsjaZwIMkhkgbl1TkoaRrgucfsct7SVy9KvTj5LtECit+ZjQ3ts+7xWzgfHOGzdolfWEgrw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <!-- QR Code JS -->
+  <script src="https://unpkg.com/qrjs2@0.1.6/qrjs2.js"></script>
+
+  <!-- Bootstrap Table JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.19.1/bootstrap-table.min.js"
+    integrity="sha512-SoNdA/8QMSSlEcJAXKdAALavPMfGJnoh/96Tosg3qxQhdktSAttyHT7ePJghxJNvLCeyJYtXcdrTgLvHHsbRcQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <!-- clipboard JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.10/clipboard.min.js"></script>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.2/css/bootstrap.min.css"
+    integrity="sha512-CpIKUSyh9QX2+zSdfGP+eWLx23C8Dj9/XmHjZY2uDtfkdLGo0uY12jgcnkX9vXOgYajEKb/jiw67EYm+kBf+6g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Custom Styles CSS -->
+  <link rel="stylesheet" href="../css/style.css" />
+  <!-- Font Awesome CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Bootstrap Table CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.19.1/bootstrap-table.min.css"
+    integrity="sha512-Ulm5pOx2O8n6XDa0CY2S+GfOmV2R2SrvCpVmhjsxi4VmvcqB5JM5POLuePq496f9CkeAtvPpJlcjLRcTPk79iw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+
+<body>
+  <!-- navbar -->
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#"><img src="../assets/images/CSIR_Logo.png"/ height="35px" width="35px" style="margin-right: 15px;"> CSIR Self-Sovereign Identity Admin Dashboard</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+        aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav me-auto mb-2 mb-md-0">
+        </ul>
+        <form class="d-flex">
+          <button class="btn btn-primary" type="submit" id="login">Login</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+  <!-- welcome page slides -->
+  <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+        aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+        aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+        aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <!-- <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+          preserveAspectRatio="xMidYMid slice" focusable="false">
+          <rect width="100%" height="100%" fill="#777"></rect>
+        </svg> -->
+
+        <img src="../assets/images/Carousel_1.png" alt="Carousel_1" style="object-fit: cover;">
+      </div>
+      <div class="carousel-item">
+        <!-- <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+          preserveAspectRatio="xMidYMid slice" focusable="false">
+          <rect width="100%" height="100%" fill="#777"></rect>
+        </svg> -->
+        <img src="../assets/images/Carousel_2.png" alt="Carousel_2" style="object-fit: cover;">
+
+      </div>
+      <div class="carousel-item">
+        <!-- <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+          preserveAspectRatio="xMidYMid slice" focusable="false">
+          <rect width="100%" height="100%" fill="#777"></rect>
+        </svg> -->
+        <img src="../assets/images/Carousel_3.png" alt="Carousel_3" style="object-fit: cover;">
+
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+      data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+      data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+  <!-- marketing features -->
+  <div class="container marketing">
+    <div class="row">
+      <div class="col-lg-4">
+        <i class="fa-solid fa-file-contract" style="font-size: 68px; margin-bottom: 30px; color: #3587F2"></i>
+        <h2>Credentials</h2>
+        <p>Create credentials and templates that can be issued to registered wallet holders.</p>
+      </div><!-- /.col-lg-4 -->
+      <div class="col-lg-4">
+        <span style=""></span>
+        <i class="fa-solid fa-check-to-slot" style="font-size: 68px; margin-bottom: 30px; color: #3587F2"></i>
+        <h2>Verifications</h2>
+        <p>Confirm validity of credentials shared without compromising sensitivity of details shared.</p>
+      </div><!-- /.col-lg-4 -->
+      <div class="col-lg-4">
+        <i class="fa-solid fa-wallet" style="font-size: 68px; margin-bottom: 30px; color: #3587F2"></i>
+        <h2>Wallet</h2>
+        <p>Dislpay a list of credentials issued against wallet holder and check validity of credential.</p>
+      </div><!-- /.col-lg-4 -->
+    </div>
+  </div>
+
+  </div>
+
+  <!-- load modals -->
+  <div id="modal_load"></div>
+
+  <div id="cover-spin"></div>
+</body>
+
+</html>
