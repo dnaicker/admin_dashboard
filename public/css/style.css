@@ -1,5 +1,13 @@
 /* General
 -------------------------------------------------- */
+.navbar {
+  background-color: #003266 !important; 
+}
+
+.navbar-brand {
+  color: white !important;
+}
+
 body {
     background: #f1f1f1;
     overflow-y: auto;

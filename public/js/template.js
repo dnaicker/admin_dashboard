@@ -1,7 +1,8 @@
 import { ngrok } from './env.js'
 
 const ngrok_url = await ngrok();
-const auth_token = "CiVodHRwczovL3RyaW5zaWMuaWQvc2VjdXJpdHkvdjEvb2Jlcm9uEkkKKnVybjp0cmluc2ljOndhbGxldHM6N1VwRmtIUEdvektWUWNFSHVLYVZ3TSIbdXJuOnRyaW5zaWM6ZWNvc3lzdGVtczpDU0lSGjCTwP0t3e2BdAKnkSjJIJN1HMwlexAmvYBUGBzR_DEFkGZebj-IdHu48JKhMrjBdegiAA"
+
+const auth_token = localStorage.getItem('auth_token');
 
 // ------------------------------
 // on load
@@ -213,8 +214,8 @@ $("#logout").click(function	(e) {
 	e.preventDefault();
 
 	//clear local storage
-	localStorage.clear();
-	
+	window.localStorage.clear();
+
 	// navigate to home page
 	window.location.assign("/html/index.html");
 

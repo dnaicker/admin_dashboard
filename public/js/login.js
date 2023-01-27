@@ -10,6 +10,8 @@ var challenge = '';
 // ------------------------------
 export async function login_email(email) {
 	const data = {}
+	
+	$("#cover-spin").show();
 
 	$.ajax({
 		url: `${ngrok_url}/trinsicCreateOrLoginAccount/${email}`,
@@ -17,9 +19,11 @@ export async function login_email(email) {
 		success: function (result) {
 			console.log(result);
 			challenge = result;
+			$("#cover-spin").hide();
 			alert("Email has been sent.");
 		},
 		error: function (error) {
+			$("#cover-spin").hide();
 			console.log(error);
 		}
 	});
@@ -27,6 +31,7 @@ export async function login_email(email) {
 
 // ------------------------------
 export async function login_otp(otp) {
+	$("#cover-spin").show();
 	const data = {}
 
 	// challenge acquired globally from email login response
@@ -48,6 +53,10 @@ export async function login_otp(otp) {
 		error: function (error) {
 			$('#cover-spin').hide();
 			console.log(error);
+
+			// store auth_token in local storage
+			window.localStorage.setItem('auth_token', error.responseText);
+
 			window.location.assign("/html/pages/wallet.html");
 		}
 	});
