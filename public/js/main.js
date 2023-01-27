@@ -6,7 +6,7 @@ const UUIDv4 = function b(a) { return a ? (a ^ Math.random() * 16 >> a / 4).toSt
 // ------------------------------
 // on load
 $(document).ready(function () {
-	$("#modal_load").load("../modal.html");
+	$("#modal_load").load("modal.html");
 	start_page();
 });
 
@@ -41,6 +41,7 @@ $("#login").click(function (e) {
 	e.preventDefault();
 	
 	console.log("login");
+
 	// dislpay modal
 	$("#login_modal").modal('show');
 	

@@ -319,6 +319,18 @@ function format_field_names (params) {
 }
 
 // ------------------------------
+$("#logout").click(function	(e) {
+	e.preventDefault();
+
+	//clear local storage
+	localStorage.clear();
+	
+	// navigate to home page
+	window.location.assign("/html/index.html");
+
+});
+
+// ------------------------------
 function show_modal(header, body) {
 	$("#modal_header")[0].innerHTML = header;
 	$("#modal_body")[0].innerHTML = "<p>" + body + "</p>";

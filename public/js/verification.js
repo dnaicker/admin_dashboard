@@ -338,3 +338,16 @@ function show_confirmation_modal(header, body, confirm_callback) {
 		$("#confirmation_modal").modal('hide');
 	});
 }
+
+
+// ------------------------------
+$("#logout").click(function	(e) {
+	e.preventDefault();
+
+	//clear local storage
+	localStorage.clear();
+	
+	// navigate to home page
+	window.location.assign("/html/index.html");
+
+});
