@@ -16,3 +16,14 @@ export function show_confirmation_modal(header, body, confirm_callback) {
 		$("#confirmation_modal").modal('hide');
 	});
 }
+
+// ------------------------------
+function show_copy_modal(header, raw_data, body, callback) {
+	$("#copy_modal_header")[0].innerHTML = header;
+	$("#copy_modal_body")[0].innerHTML = "<p>" + body + "</p>";
+	$("#copy_button").attr("data-clipboard-text", JSON.stringify(raw_data));
+	$("#copy_modal").modal('show');
+	$("#copy_button").on("click", function (e, target, value) {
+		callback(body);
+	});
+}

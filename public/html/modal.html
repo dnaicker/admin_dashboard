@@ -1,4 +1,22 @@
 <!-- copy modal for display results -->
+<div id="copy_modal" class="modal" tabindex="-1">
+	<div class="modal-dialog modal-md">
+		<div class="modal-content">
+			<div class="modal-header" style="border-bottom: 0px;">
+				<h5 class="modal-title" id="copy_modal_header"></h5>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<div id="copy_modal_body" style="overflow-wrap: break-word;"></div>
+			</div>
+			<div class="modal-footer" style="border-top: 0px;">
+				<button type="button" class="btn btn-primary copy-btn" id="copy_button">Copy</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- save modal -->
 <div id="save_modal" class="modal" tabindex="-1">
 	<div class="modal-dialog modal-lg">
 		<div class="modal-content">
@@ -64,6 +82,7 @@
 				<h5 class="modal-title">OTP (One Time Pin) Login</h5>
 				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 			</div>
+			
 			<div class="modal-body">
 				<p>
 					To securely login a <b>One Time Pin</b> will be generated and sent to your user email address. 
@@ -76,15 +95,6 @@
 						Email
 					</button>
 				</div>
-
-				<!-- <label class='form-label'>Email Address</label>
-				<div class="form-floating">
-					<input class="form-control template-field" type="text" id="email" name="email" placeholder="Email" style="margin-bottom: 20px; "/>
-					<label>Email</label> -->
-	
-					<!--  send otp -->
-					<!-- <button class="btn btn-primary" id="send_otp" style="margin-bottom: 20px; margin-top: 20px"><i class="fa-regular fa-envelope" style="margin-right: 5px;"></i>Email Pin</button>
-				</div> -->
 	
 				<!--  otp -->
 				<div id="show_otp">
@@ -103,3 +113,4 @@
 		</div>
 	</div>
 </div>
+

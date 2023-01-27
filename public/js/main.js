@@ -1,4 +1,4 @@
-import { login_email, login_otp } from './api.js';
+import { login_email, login_otp } from './login.js';
 import { show_modal } from './modal.js';
 
 const UUIDv4 = function b(a) { return a ? (a ^ Math.random() * 16 >> a / 4).toString(16) : ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, b) }
@@ -6,7 +6,7 @@ const UUIDv4 = function b(a) { return a ? (a ^ Math.random() * 16 >> a / 4).toSt
 // ------------------------------
 // on load
 $(document).ready(function () {
-	$("#modal_load").load("modal.html");
+	$("#modal_load").load("../modal.html");
 	start_page();
 });
 
@@ -27,14 +27,19 @@ function hide_otp() {
 };
 
 // ------------------------------
-// event handlers
+// event handler
 $("#send_otp").click(function () {
 	console.log("send_otp");
+	
 	login_email();
+	
 	hide_otp();
 });
 
-$("#login").click(function () {
+// event handler: login click
+$("#login").click(function (e) {
+	e.preventDefault();
+	
 	console.log("login");
 	// dislpay modal
 	$("#login_modal").modal('show');
@@ -42,13 +47,25 @@ $("#login").click(function () {
 	// add event handler to submit button
 	// on email button click
 	$("#login_email").click(function () {
+
+		console.log('click')
+
+		// send login email address to server
 		login_email($("#email").val());
 
-		// add event handler for otp submit
+		// add event handler for otp submit after otp field display
 		$("#otp_login").click(function () {
+
+			// turn of button if double pressed
 			$('#otp_login').attr("disabled", true);
+			
+			// show loader spinner
 			$('#cover-spin').show();
+			
+			// send otp details to server
 			login_otp($("#otp").val());
+			
+			// hide modal after a few seconds
 			$("#login_modal").modal('hide');
 		});
 	});
