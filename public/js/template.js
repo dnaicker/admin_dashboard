@@ -50,8 +50,7 @@ function build_select_field_type() {
 
 // ------------------------------
 // add row with input fields
-function delete_row(element) {
-
+window.delete_row = function (element) {
 	show_confirmation_modal('Delete Row', 'Are you sure you want to delete this row?', function () {
 		console.log('delete row');
 		$(element).parent().parent().remove();
@@ -78,7 +77,7 @@ $("#add_field").on("click", function (e) {
 	arr.push(build_optional_field_selection());
 
 	arr.push(
-		'<div class="col-md-1"><button class="btn btn-block btn-danger" style="width: 100%" onclick="delete_row(this); return false;"><i class="fa-solid fa-trash"></i></button></div>'
+		'<div class="col-md-1"><button class="btn btn-block btn-danger" style="width: 100%" onclick="window.delete_row(this); return false;"><i class="fa-solid fa-trash"></i></button></div>'
 	);
 	arr.push("</div>");
 
