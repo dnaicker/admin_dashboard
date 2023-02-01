@@ -1,5 +1,5 @@
-import { show_modal } from './modal.js';
-import { ngrok } from './env.js'
+import { show_modal } from './../modal.js';
+import { ngrok } from './../env.js'
 
 const ngrok_url = await ngrok();
 
