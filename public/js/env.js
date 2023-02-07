@@ -1,3 +1,3 @@
 export async function ngrok() {
-	return "http://b48a-105-225-206-36.ngrok.io";
+	return "http://43ab-2001-4200-7000-9-90a5-770f-cb44-9277.ngrok.io";
 }

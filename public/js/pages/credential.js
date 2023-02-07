@@ -285,10 +285,10 @@ function build_for_email(data) {
 }
 
 // ------------------------------
-function build_credential_save_modal(data, credential_json) {
+function build_credential_save_modal(data, credential) {
 	let arr = [];
 
-	console.log(credential_json);
+	console.log(credential.credential);
 
 	arr.push("<div>");
 	arr.push("<p><u>Option 1: Send to email address</u></p>");
@@ -298,12 +298,12 @@ function build_credential_save_modal(data, credential_json) {
 	// add qr code image
 	// todo find a better way to generate qr code
 	
-	arr.push("<p><img src='https://chart.googleapis.com/chart?cht=qr&chl="+ credential_json + "&chs=200x200&chld=L|1' alt='qr code' /><p>");
+	arr.push(`<p><img src='https://chart.googleapis.com/chart?cht=qr&chl=/${ngrok_url}/getCredentialWithLookupId/${credential.lookup_id}&chs=200x200&chld=L|1' alt='qr code' /><p>`);
 	arr.push("<p><u>Option 3: Download credential as JSON</u></p>");
-	arr.push("<p><a class='btn btn-primary' href='data:text/json;charset=utf-8,"+encodeURIComponent(JSON.stringify(credential_json))+"' download='credential.json' target='_blank'><i class='fa-solid fa-scroll icon-spacing'></i>Download Credential JSON</a></p>");
-	arr.push("<p><u>Option 4: Download credential as PDF</u></p>");
-	arr.push("<p><u>Option 5: Copy credential to clipboard</u></p>");
-	arr.push("<p><button id='copy_btn' class='btn btn-primary' data-clipboard-text='"+JSON.stringify(credential_json)+"'><i class='fa-solid fa-copy icon-spacing'></i>Copy Credential JSON Text</button></p>");
+	arr.push("<p><a class='btn btn-primary' href='data:text/json;charset=utf-8,"+encodeURIComponent(JSON.stringify(credential.credential))+"' download='credential.json' target='_blank'><i class='fa-solid fa-scroll icon-spacing'></i>Download Credential JSON</a></p>");
+	// arr.push("<p><u>Option 4: Download credential as PDF</u></p>");
+	arr.push("<p><u>Option 4: Copy credential to clipboard</u></p>");
+	arr.push("<p><button id='copy_btn' class='btn btn-primary' data-clipboard-text='"+JSON.stringify(credential.credential)+"'><i class='fa-solid fa-copy icon-spacing'></i>Copy Credential JSON Text</button></p>");
 	// arr.push("<p style='overflow-wrap: break-word;'><i>"+JSON.stringify(credential_json)+"<i></p>");
 	arr.push("</div>");
 
