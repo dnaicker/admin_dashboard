@@ -2,13 +2,13 @@
 <html lang="en">
 
 <head>
-  <title>Wallet</title>
+  <title>Credentials</title>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
   <!-- Custom JS -->
   <script defer src="../../js/modal.js" type="module"></script>
-  <script defer src="../../js/pages/wallet.js" type="module"></script>
+  <script defer src="../../js/pages/builiding_access.js" type="module"></script>
   <script defer src="../../js/main.js" type="module"></script>
 
   <!-- Custom Styles CSS -->
@@ -33,7 +33,9 @@
   <script src="https://unpkg.com/qrjs2@0.1.6/qrjs2.js"></script>
 
   <!-- Bootstrap Table JS -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.21.1/bootstrap-table.min.js" integrity="sha512-/OzWt35/0T0ed3ffIJV97dPBS0pFnHB9kewb/hheD9fyWqwM/mFTw+WFDaZ4eNP6/9z3Q1hKYEaUCvQlZmyj7w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.19.1/bootstrap-table.min.js"
+    integrity="sha512-SoNdA/8QMSSlEcJAXKdAALavPMfGJnoh/96Tosg3qxQhdktSAttyHT7ePJghxJNvLCeyJYtXcdrTgLvHHsbRcQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
   <!-- clipboard JS -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.10/clipboard.min.js"></script>
@@ -49,25 +51,28 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <!-- Bootstrap Table CSS -->
-  <!-- Bootstrap Table CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.21.1/bootstrap-table.min.css" integrity="sha512-LWPhjCM1g+Vf7cnbYEc3AG20LhMd3uvGDltE4kGPMgzuK5xMdxGqoqpGNkmstaf00vXPCbegOW3LmiDhxKxe+w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.19.1/bootstrap-table.min.css"
+    integrity="sha512-Ulm5pOx2O8n6XDa0CY2S+GfOmV2R2SrvCpVmhjsxi4VmvcqB5JM5POLuePq496f9CkeAtvPpJlcjLRcTPk79iw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
   <!-- navigation -->
   <div id="navigation_load"></div>
-
+  
   <!-- main -->
-  <div class="container col-8" >
-    <h2 style="margin-bottom: 20px; margin-top: 20px">Wallet Credentials</h2>
-    <table id="list_credentials" data-id-field="id" class="table table-borderless table-hover"></table>
+  <div class="container col-8">
+    <h2 style="margin-bottom: 20px; margin-top: 20px">Building Access</h2>
+
+   <!-- show qr code -->
+   <div id="qr_code"></div>
   </div>
+
 
   <!-- load modals -->
   <div id="modal_load"></div>
 
-  <!-- spinner -->
+  <!-- load spinner -->
   <div id="cover-spin"></div>
 </body>
 

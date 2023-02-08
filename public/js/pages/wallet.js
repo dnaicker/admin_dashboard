@@ -11,6 +11,7 @@ let select_template_id = null;
 // on load
 $(document).ready(function () {
 	$("#modal_load").load("../modal.html");
+	$("#navigation_load").load("../navigation.html");
 
 	// loader spinner
 	$('#cover-spin').show();

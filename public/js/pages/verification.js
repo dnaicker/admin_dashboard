@@ -14,6 +14,8 @@ const UUIDv4 = function b(a) { return a ? (a ^ Math.random() * 16 >> a / 4).toSt
 $(document).ready(function () {
 	$('#cover-spin').show();
 	$("#modal_load").load("../modal.html");
+	$("#navigation_load").load("../navigation.html");
+
 	// create dropdown of template ids
 	load_template_ids();
 });

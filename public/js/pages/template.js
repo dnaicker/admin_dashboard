@@ -9,6 +9,8 @@ const auth_token = localStorage.getItem('auth_token');
 // on load
 $(document).ready(function () {
 	$("#modal_load").load("../modal.html");
+	$("#navigation_load").load("../navigation.html");
+
 });
 
 // ------------------------------
