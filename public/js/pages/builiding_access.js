@@ -33,5 +33,5 @@ $(document).ready(function () {
 						// fieldsAndValuesRequired for lookup
 			// sample request values
 async function generate_qr_code(template_id, fields_and_values_required) {
-	$("#show_qr_code")[0].innerHTML = `<p><img src='https://chart.googleapis.com/chart?cht=qr&chl=/${ngrok_url}/createVerificationQRCodeLookup/wallet_holder_auth_token/${template_id}/${fields_and_values_required}&chs=200x200&chld=L|1' alt='qr code' /><p>`;
+	$("#show_qr_code")[0].innerHTML = `<p><img src='https://chart.googleapis.com/chart?cht=qr&chl=/${ngrok_url}/createVerificationQRCodeLookup/insert_wallet_holder_auth_token/${template_id}/${fields_and_values_required}&chs=200x200&chld=L|1' alt='qr code' /><p>`;
 }
