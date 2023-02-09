@@ -37,7 +37,7 @@ async function generate_building_qr_code(template_id, fields_and_values_required
 	let arr = []
 
 	arr.push('<h4>Building <span id="building_number">'+ building_number +'</span></h4>')
-	arr.push(`<p><img src='https://chart.googleapis.com/chart?cht=qr&chl=/${ngrok_url}/createVerificationQRCodeLookup/${template_id}/${fields_and_values_required}&chs=200x200&chld=L|1' alt='qr code' /><p>`)
+	arr.push(`<p><img src='https://chart.googleapis.com/chart?cht=qr&chl=${ngrok_url}/createVerificationQRCodeLookup/${template_id}/${fields_and_values_required}&chs=200x200&chld=L|1' alt='qr code' /><p>`)
 	arr.push('<p class="access_details">Please scan the following QR code to verify you have access to building <span id="building_number">'+ building_number +'</span>.</p>')
 
 	$("#show_qr_code").append(arr.join(''));
