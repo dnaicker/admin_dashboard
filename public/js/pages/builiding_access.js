@@ -11,8 +11,8 @@ $(document).ready(function () {
 	$("#modal_load").load("../modal.html");
 	$("#navigation_load").load("../navigation.html");
 	
-	generate_building_qr_code("urn:template:CSIR:csir-building-access-card-d54c3e94-867d-48fe-a9e7-32526b838c6f/", '[{"building_number": "43"}]', 43)
-	generate_building_qr_code("urn:template:CSIR:csir-building-access-card-d54c3e94-867d-48fe-a9e7-32526b838c6f/", '[{"building_number": "9"}]', 9)
+	generate_building_qr_code("urn:template:CSIR:csir-building-access-card-d54c3e94-867d-48fe-a9e7-32526b838c6f", '[{"building_number": "43"}]', 43)
+	generate_building_qr_code("urn:template:CSIR:csir-building-access-card-d54c3e94-867d-48fe-a9e7-32526b838c6f", '[{"building_number": "9"}]', 9)
 
 	// setinterval check verification status
 				// get verification status based on id
