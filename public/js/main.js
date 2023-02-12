@@ -1,5 +1,5 @@
 import { login_email, login_otp } from './pages/login.js';
-import { show_modal } from './modal.js';
+import { show_modal, simpler_modal } from './modal.js';
 
 const UUIDv4 = function b(a) { return a ? (a ^ Math.random() * 16 >> a / 4).toString(16) : ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, b) }
 
@@ -7,6 +7,7 @@ const UUIDv4 = function b(a) { return a ? (a ^ Math.random() * 16 >> a / 4).toSt
 // on load
 $(document).ready(function () {
 	$("#modal_load").load("modal.html");
+	$("#svg_elements").load("svg_elements.html");
 	start_page();
 });
 
@@ -36,39 +37,41 @@ $("#send_otp").click(function () {
 	hide_otp();
 });
 
+// ------------------------------
 // event handler: login click
-$("#login").click(function (e) {
+$("#login_btn").click(function (e) {
 	e.preventDefault();
-	
-	console.log("login");
+
+	// check if field empty
+	if($(".login_input").val() == "") {
+		// show error
+		simpler_modal('Required', 'Please provide email address.');
+		return;
+	}
+
+	// get input email address
+	let email = $(".login_input").val();
+
+	// send login email address to server
+	login_email(email);
 
 	// dislpay modal
 	$("#login_modal").modal('show');
 	
 	// add event handler to submit button
 	// on email button click
-	$("#login_email").click(function () {
 
-		console.log('click')
+	// add event handler for otp submit after otp field display
+	$("#otp_login").click(function () {
 
-		// send login email address to server
-		login_email($("#email").val());
-
-		// add event handler for otp submit after otp field display
-		$("#otp_login").click(function () {
-
-			// turn of button if double pressed
-			$('#otp_login').attr("disabled", true);
-			
-			// show loader spinner
-			$('#cover-spin').show();
-			
-			// send otp details to server
-			login_otp($("#otp").val());
-			
-			// hide modal after a few seconds
-			$("#login_modal").modal('hide');
-		});
+		// turn of button if double pressed
+		$('#otp_login').attr("disabled", true);
+		
+		// send otp details to server
+		login_otp($("#otp").val());
+		
+		// hide modal after a few seconds
+		$("#login_modal").modal('hide');
 	});
 });
 

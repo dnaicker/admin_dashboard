@@ -322,14 +322,3 @@ function format_field_names (params) {
 	return arr.join("");
 }
 
-// ------------------------------
-$("#logout").click(function	(e) {
-	e.preventDefault();
-
-	//clear local storage
-	window.localStorage.clear();
-
-	// navigate to home page
-	window.location.assign("/html/index.html");
-
-});

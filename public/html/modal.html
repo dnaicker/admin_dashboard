@@ -37,6 +37,23 @@
 	</div>
 </div>
 
+<!-- simpler modal for display results -->
+<div id="simpler_modal" class="modal" tabindex="-1">
+	<div class="modal-dialog modal-md">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="simpler_modal_header"></h5>
+			</div>
+			<div class="modal-body">
+				<div id="simpler_modal_body" style="overflow-wrap: break-word;"></div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-primary" data-bs-dismiss="modal">Okay</button>
+			</div>
+		</div>
+	</div>
+</div>
+
 <!-- generic modal for display results -->
 <div id="modal" class="modal" tabindex="-1">
 	<div class="modal-dialog modal-md">
@@ -79,7 +96,7 @@
 	<div class="modal-dialog modal-md">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h5 class="modal-title">OTP (One Time Pin) Login</h5>
+				<h5 class="modal-title">One-Time Pin Login</h5>
 				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 			</div>
 			
@@ -88,24 +105,22 @@
 					To securely login a <b>One Time Pin</b> will be generated and sent to your user email address. 
 				</p>
 				<!--  email -->
-				<div class="input-group mb-3">
+				<!-- <div class="input-group mb-3">
 					<input type="text" class="form-control template-field" placeholder="Email" type="text" id="email" name="email" placeholder="Email" />
 					<button class="btn btn-primary" type="button" id="login_email">
 						<i class="fa-regular fa-envelope" style="margin-right: 5px;"></i>
 						Email
 					</button>
-				</div>
+				</div> -->
 	
 				<!--  otp -->
-				<div id="show_otp">
-					<p>
-						Please copy OTP from the email and paste it into the field below.
-					</p>
+				<div id="show_otp" style="margin-top: 50px">
 					<div class="input-group mb-3">
-						<input type="text" class="form-control template-field" placeholder="Insert OTP from Email" type="text" id="otp" name="otp" placeholder="OTP" />
+						<input type="text" class="form-control template-field" placeholder="One-Time Pin" type="text" id="otp" name="otp" placeholder="OTP" />
+						<br>
 						<button class="btn btn-primary" type="button" id="otp_login">
-							<i class="fa-solid fa-unlock-keyhole" style="margin-right: 5px;"></i>
-							Login 
+							<i class="fa-solid fa-key" style="margin-right: 5px;"></i>
+							Submit 
 						</button>
 					</div>
 				</div>

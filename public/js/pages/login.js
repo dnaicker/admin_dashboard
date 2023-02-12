@@ -11,16 +11,16 @@ var challenge = '';
 export async function login_email(email) {
 	const data = {}
 	
-	$("#cover-spin").show();
-
+	// $("#cover-spin").show();
+	
 	$.ajax({
 		url: `${ngrok_url}/trinsicCreateOrLoginAccount/${email}`,
 		type: "GET",
 		success: function (result) {
 			console.log(result);
 			challenge = result;
-			$("#cover-spin").hide();
-			alert("Email has been sent.");
+			// $("#cover-spin").hide();
+			// alert("Email has been sent.");
 		},
 		error: function (error) {
 			$("#cover-spin").hide();

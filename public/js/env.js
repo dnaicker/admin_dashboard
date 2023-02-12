@@ -1,3 +1,3 @@
 export async function ngrok() {
-	return "http://0d45-41-13-88-33.ngrok.io";
+	return "http://1828-105-226-150-96.ngrok.io";
 }

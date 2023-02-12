@@ -1,5 +1,12 @@
 
 // ------------------------------
+export function simpler_modal(header, body) {
+	$("#simpler_modal_header")[0].innerHTML = header;
+	$("#simpler_modal_body")[0].innerHTML = "<p style=''>" + body + "</p>";
+	$("#simpler_modal").modal('show');
+}
+
+// ------------------------------
 export function show_modal(header, body) {
 	$("#modal_header")[0].innerHTML = header;
 	$("#modal_body")[0].innerHTML = "<p style=''>" + body + "</p>";
@@ -38,3 +45,4 @@ export function show_copy_modal(header, raw_data, body, callback) {
 // 		callback(body);
 // 	});
 // }
+
