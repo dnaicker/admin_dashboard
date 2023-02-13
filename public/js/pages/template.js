@@ -10,7 +10,10 @@ const auth_token = localStorage.getItem('auth_token');
 $(document).ready(function () {
 	$("#modal_load").load("../modal.html");
 	$("#navigation_load").load("../navigation.html");
-
+	$("#add_field").click();
+	$("#add_field").click();
+	$("#add_field").click();
+	$("#add_field").click();
 });
 
 // ------------------------------

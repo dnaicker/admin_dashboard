@@ -27,8 +27,6 @@ function generate_qr_code() {
 	return arr.join("");
 }
 
-
-
 // ------------------------------
 async function load_template_ids() {
 	const data = {}
@@ -43,9 +41,15 @@ async function load_template_ids() {
 		url: `${ngrok_url}/searchTemplate`,
 		type: "POST",
 		success: function (result) {
+			let json = JSON.parse(result.itemsJson);
+
 			$('#cover-spin').hide();
 			// build select options with template ids
 			$("#template_id").append(build_select_field_type(JSON.parse(result.itemsJson)));
+
+			console.log(json[json.length-1].id);
+			select_template_id = json[json.length-1].id;
+			get_template_json(json[json.length-1].id);
 
 			// add event handler to selection options
 			$("#select_template_id").change(function (e) {
@@ -56,6 +60,13 @@ async function load_template_ids() {
 				get_template_json(this.value);
 			});
 		},
+		error: function(result) {
+			$('#cover-spin').hide();
+			console.log(error);
+		},
+		default: function(result) {
+			$('#cover-spin').hide();
+		}
 	});
 }
 

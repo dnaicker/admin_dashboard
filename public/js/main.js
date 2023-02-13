@@ -37,11 +37,24 @@ $("#send_otp").click(function () {
 	hide_otp();
 });
 
+// on enter key press
+$(".login_input").keypress(function (event) {
+	console.log('enter key pressed', event.key);
+	if (event.key === "Enter") {
+		event.preventDefault();
+		login_logic();
+	}
+});
+
 // ------------------------------
 // event handler: login click
 $("#login_btn").click(function (e) {
 	e.preventDefault();
+	login_logic();
+});
 
+
+function login_logic() {
 	// check if field empty
 	if($(".login_input").val() == "") {
 		// show error
@@ -73,5 +86,4 @@ $("#login_btn").click(function (e) {
 		// hide modal after a few seconds
 		$("#login_modal").modal('hide');
 	});
-});
-
+}

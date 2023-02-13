@@ -35,9 +35,14 @@ async function load_template_ids() {
 		url: `${ngrok_url}/searchWallet`,
 		type: "POST",
 		success: function (result) {
+
 			const arr = parse_items(result.items);
 			// build select options with template ids
 			$("#template_id").append(build_select_field_type(arr));
+
+			console.log(arr[arr.length-2].id);
+			select_template_id = arr[arr.length-2].id;
+			get_template_json(arr[arr.length-2].id);
 
 			// add event handler to selection options
 			$("#select_template_id").change(function (e) {

@@ -1,5 +1,9 @@
 /* General
 -------------------------------------------------- */
+h2 {
+  color: #003266 !important;
+}
+
 .navbar {
   background-color: #003266 !important; 
 }
@@ -11,6 +15,8 @@
 body {
     background: #f1f1f1;
     overflow-y: auto;
+    font-family: 'Poppins', sans-serif !important; 
+
   }
   
 ::-webkit-scrollbar-thumb {
@@ -267,3 +273,4 @@ to {transform:rotate(360deg);}
     margin-top: 7rem;
   }
 }
+
