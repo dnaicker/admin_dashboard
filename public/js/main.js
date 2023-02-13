@@ -45,7 +45,7 @@ $("#login_btn").click(function (e) {
 	// check if field empty
 	if($(".login_input").val() == "") {
 		// show error
-		simpler_modal('Required', 'Please provide email address.');
+		simpler_modal('Email Required', 'Please provide an email address to <u>login</u> or <u>register</u> into admin dashboard.');
 		return;
 	}
 

@@ -40,7 +40,7 @@ async function get_credentials_for_wallet() {
 
 	data['auth_token'] = auth_token;
 
-	data['query'] = "SELECT c.id, c.type, c.data FROM c";
+	data['query'] = "SELECT c.id, c.type, c.data FROM c ORDER BY	c.id ASC";
 
 	$.ajax({
 		dataType: 'json',
@@ -144,16 +144,25 @@ function load_table(data) {
 		columns: [
 			[
 				{
+					field: 'credential_template_name',
+					title: 'Credential Name',
+					events: window.operateEvents,
+					formatter: function (value, row) {
+						// from first index of - remove	everything before it
+						console.log(value);
+						// if value not undefined
+						if(value) {
+							return value.substr(0, value.indexOf('-'));
+						}
+						return "";
+					}
+				},
+				{
 					field: 'id',
 					title: 'Credential ID',
 					formatter: function (value, row) {
 						return "<a href='javascript:void(0)' class='view_credential'>" + value + "</a>";
 					},
-					events: window.operateEvents,
-				},
-				{
-					field: 'credential_template_name',
-					title: 'Credential Template Name',
 					events: window.operateEvents,
 				},
 				{
