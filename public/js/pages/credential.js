@@ -288,7 +288,7 @@ function build_for_email(data) {
 
 	arr.push('<p>This will associate the credential to your account email address rather than send an email notification with credential.</p>');
 	arr.push('<div class="input-group mb-3">');
-	arr.push('<input type="text" class="form-control outline-primary" id="account_email" placeholder="dnaicker@gmail.com" value="dnaicker@gmail.com">');
+	arr.push('<input type="text" class="form-control outline-primary" id="account_email" placeholder="Email" value="">');
 	arr.push('<button class="btn btn-outline-primary" type="button" id="send_email">Send</button>');
 	arr.push('</div>');
 
