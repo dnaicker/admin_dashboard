@@ -15,16 +15,16 @@ $(document).ready(function () {
 
 	arr.push('<div class="row">');
 	arr.push('<div class="col-lg-4">');
-	arr.push(generate_building_qr_code("urn:template:CSIR:csir-building-access-card-d54c3e94-867d-48fe-a9e7-32526b838c6f", '[{building_number: 43}]', 'Building 43'));
+	arr.push(generate_building_qr_code("urn:template:CSIR:csir-building-access-card-d54c3e94-867d-48fe-a9e7-32526b838c6f", "{'building_number': '43'}", 'Building 43'));
 	arr.push('</div>');
 	arr.push('<div class="col-lg-4">');
-	arr.push(generate_building_qr_code("urn:template:CSIR:csir-building-access-card-d54c3e94-867d-48fe-a9e7-32526b838c6f", '[{building_number: 41}]', 'Building 41'));
+	arr.push(generate_building_qr_code("urn:template:CSIR:csir-building-access-card-d54c3e94-867d-48fe-a9e7-32526b838c6f", "{'building_number': '41'}", 'Building 41'));
 	arr.push('</div>');
 	arr.push('<div class="col-lg-4">');
-	arr.push(generate_building_qr_code("urn:template:CSIR:csir-building-access-card-d54c3e94-867d-48fe-a9e7-32526b838c6f", '[{building_number: 9}]', 'IT Building'));
+	arr.push(generate_building_qr_code("urn:template:CSIR:csir-building-access-card-d54c3e94-867d-48fe-a9e7-32526b838c6f", "{'building_number': '9'}", 'IT Building'));
 	arr.push('</div>');
 	arr.push('<div class="col-lg-4">');
-	arr.push(generate_building_qr_code("urn:template:CSIR:csir-building-access-card-d54c3e94-867d-48fe-a9e7-32526b838c6f", '[{building_number: 3}]', 'Newtons Eatery'));
+	arr.push(generate_building_qr_code("urn:template:CSIR:csir-building-access-card-d54c3e94-867d-48fe-a9e7-32526b838c6f", "{'building_number': '3'}", 'Newtons Eatery'));
 	arr.push('</div>');
 	arr.push('</div>');
 
