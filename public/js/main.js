@@ -1,5 +1,5 @@
 import { login_email, login_otp } from './pages/login.js';
-import { show_modal, simpler_modal } from './modal.js';
+import { show_modal, simpler_modal, OTPInput } from './modal.js';
 
 const UUIDv4 = function b(a) { return a ? (a ^ Math.random() * 16 >> a / 4).toString(16) : ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, b) }
 
@@ -70,6 +70,8 @@ function login_logic() {
 
 	// dislpay modal
 	$("#login_modal").modal('show');
+
+	OTPInput();
 	
 	// add event handler to submit button
 	// on email button click
@@ -79,9 +81,14 @@ function login_logic() {
 
 		// turn of button if double pressed
 		$('#otp_login').attr("disabled", true);
+
+		// grab data from otp numeric fields
+		const otp_val = $("#first").val() + $("#second").val() + $("#third").val() + $("#fourth").val() + $("#fifth").val() + $("#sixth").val();
+
+		console.log(otp_val);
 		
 		// send otp details to server
-		login_otp($("#otp").val());
+		login_otp(otp_val);
 		
 		// hide modal after a few seconds
 		$("#login_modal").modal('hide');

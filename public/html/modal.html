@@ -2,15 +2,17 @@
 <div id="copy_modal" class="modal" tabindex="-1">
 	<div class="modal-dialog modal-md">
 		<div class="modal-content">
-			<div class="modal-header" style="border-bottom: 0px;">
+			<div class="modal-header" style="border-bottom: 0px">
 				<h5 class="modal-title" id="copy_modal_header"></h5>
 				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 			</div>
 			<div class="modal-body">
-				<div id="copy_modal_body" style="overflow-wrap: break-word;"></div>
+				<div id="copy_modal_body" style="overflow-wrap: break-word"></div>
 			</div>
-			<div class="modal-footer" style="border-top: 0px;">
-				<button type="button" class="btn btn-primary copy-btn" id="copy_button">Copy</button>
+			<div class="modal-footer" style="border-top: 0px">
+				<button type="button" class="btn btn-primary copy-btn" id="copy_button">
+					Copy
+				</button>
 			</div>
 		</div>
 	</div>
@@ -20,18 +22,21 @@
 <div id="save_modal" class="modal" tabindex="-1">
 	<div class="modal-dialog modal-lg">
 		<div class="modal-content">
-			<div class="modal-header" style="border-bottom: 0px;">
+			<div class="modal-header" style="border-bottom: 0px">
 				<h5 class="modal-title" id="save_modal_header"></h5>
 				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 			</div>
 			<div class="modal-body">
 				<p>
-					Please select one of the five options available to acquire the credential.
+					Please select one of the five options available to acquire the
+					credential.
 				</p>
-				<div id="save_modal_body" style="overflow-wrap: break-word;"></div>
+				<div id="save_modal_body" style="overflow-wrap: break-word"></div>
 			</div>
-			<div class="modal-footer" style="border-top: 0px;">
-				<button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+			<div class="modal-footer" style="border-top: 0px">
+				<button type="button" class="btn btn-primary" data-bs-dismiss="modal">
+					Close
+				</button>
 			</div>
 		</div>
 	</div>
@@ -45,10 +50,12 @@
 				<h5 class="modal-title" id="simpler_modal_header"></h5>
 			</div>
 			<div class="modal-body">
-				<div id="simpler_modal_body" style="overflow-wrap: break-word;"></div>
+				<div id="simpler_modal_body" style="overflow-wrap: break-word"></div>
 			</div>
 			<div class="modal-footer">
-				<button type="button" class="btn btn-primary" data-bs-dismiss="modal">Okay</button>
+				<button type="button" class="btn btn-primary" data-bs-dismiss="modal">
+					Okay
+				</button>
 			</div>
 		</div>
 	</div>
@@ -63,10 +70,12 @@
 				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 			</div>
 			<div class="modal-body">
-				<div id="modal_body" style="overflow-wrap: break-word;"></div>
+				<div id="modal_body" style="overflow-wrap: break-word"></div>
 			</div>
 			<div class="modal-footer">
-				<button type="button" class="btn btn-primary" data-bs-dismiss="modal">Okay</button>
+				<button type="button" class="btn btn-primary" data-bs-dismiss="modal">
+					Okay
+				</button>
 			</div>
 		</div>
 	</div>
@@ -84,8 +93,12 @@
 				<div id="confirmation_modal_body"></div>
 			</div>
 			<div class="modal-footer">
-				<button type="button" class="btn btn-default" data-bs-dismiss="modal">Cancel</button>
-				<button type="button" class="btn btn-primary" id="modal_button_confirm">Confirm</button>
+				<button type="button" class="btn btn-default" data-bs-dismiss="modal">
+					Cancel
+				</button>
+				<button type="button" class="btn btn-primary" id="modal_button_confirm">
+					Confirm
+				</button>
 			</div>
 		</div>
 	</div>
@@ -99,10 +112,11 @@
 				<h5 class="modal-title">One-Time Pin Login</h5>
 				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 			</div>
-			
+
 			<div class="modal-body">
 				<p>
-					To securely login a <b>One Time Pin</b> will be generated and sent to your user email address. 
+					To securely login a <b>One Time Pin</b> will be generated and sent to
+					your user email address.
 				</p>
 				<!--  email -->
 				<!-- <div class="input-group mb-3">
@@ -112,20 +126,23 @@
 						Email
 					</button>
 				</div> -->
-	
-				<!--  otp -->
-				<div id="show_otp" style="margin-top: 50px">
-					<div class="input-group mb-3">
-						<input type="text" class="form-control template-field" placeholder="One-Time Pin" type="text" id="otp" name="otp" placeholder="OTP" />
-						<br>
-						<button class="btn btn-primary" type="button" id="otp_login">
-							<i class="fa-solid fa-key" style="margin-right: 5px;"></i>
-							Submit 
-						</button>
-					</div>
+
+				<!-- create one time pin single  digit numeric fields -->
+				<div id="otp" class="inputs d-flex flex-row justify-content-center mt-2">
+					<input class="m-2 text-center form-control rounded" type="text" id="first" maxlength="1" style="height: 80px;"/>
+					<input class="m-2 text-center form-control rounded" type="text" id="second" maxlength="1" style="height: 80px;"/>
+					<input class="m-2 text-center form-control rounded" type="text" id="third" maxlength="1" style="height: 80px;"/>
+					<input class="m-2 text-center form-control rounded" type="text" id="fourth" maxlength="1" style="height: 80px;"/>
+					<input class="m-2 text-center form-control rounded" type="text" id="fifth" maxlength="1" style="height: 80px;"/>
+					<input class="m-2 text-center form-control rounded" type="text" id="sixth" maxlength="1" style="height: 80px;"/>
 				</div>
+
+				<!--  otp -->
+				<button class="btn btn-primary btn-lg " type="button" id="otp_login" style="width: 100% !important; margin-top: 25px;" >
+					<i class="fa-solid fa-key" style="margin-right: 5px"></i>
+					Submit
+				</button>
 			</div>
 		</div>
 	</div>
 </div>
-
